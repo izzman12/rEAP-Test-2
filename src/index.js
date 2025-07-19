@@ -26,7 +26,3 @@ h2,
 h3 {
   color: #1e40af; /* blue-800 */
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
