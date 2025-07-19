@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 const logoBlue = "#1E3A8A"; // Indigo-800 shade
 const logoLightBlue = "#3B82F6"; // Blue-500 shade
 
@@ -28,8 +30,6 @@ function Logo() {
     </div>
   );
 }
-
-import React, { useState } from "react";
 
 // --- Login Page ---
 function LoginPage({ onLogin }) {
@@ -109,9 +109,6 @@ function NavBar({ setPage, onLogout }) {
   );
 }
 
-const Card = ({ children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {
 // --- Home Page ---
 function HomePage() {
   return (
@@ -128,9 +125,6 @@ function HomePage() {
   );
 }
 
-const Card = ({ children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {
 // --- Billing Form ---
 function BillingForm({ onAddBill }) {
   const [formData, setFormData] = useState({
@@ -298,15 +292,12 @@ function BillingForm({ onAddBill }) {
   );
 }
 
-const Card = ({ children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {
 // --- Previous Bills Page ---
 function PreviousBills({ bills }) {
-  const statusColor = {
-    pending: "yellow",
-    approved: "green",
-    rejected: "red",
+  const statusColorClasses = {
+    pending: "bg-yellow-500",
+    approved: "bg-green-500",
+    rejected: "bg-red-500",
   };
 
   return (
@@ -332,7 +323,7 @@ function PreviousBills({ bills }) {
               <td className="border border-gray-300 p-2">{bill.dateOfService}</td>
               <td className="border border-gray-300 p-2 text-center">
                 <span
-                  className={`inline-block w-4 h-4 rounded-full bg-${statusColor[bill.status]}-500`}
+                  className={`inline-block w-4 h-4 rounded-full ${statusColorClasses[bill.status]}`}
                   title={bill.status}
                 ></span>
               </td>
@@ -344,9 +335,6 @@ function PreviousBills({ bills }) {
   );
 }
 
-const Card = ({ children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {
 // --- Profile Page ---
 function ProfilePage({ profileData, setProfileData }) {
   const handleChange = (e) => {
@@ -404,9 +392,6 @@ function ProfilePage({ profileData, setProfileData }) {
   );
 }
 
-const Card = ({ children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {
 // --- About Us Page ---
 function AboutUsPage() {
   return (
@@ -427,9 +412,6 @@ function AboutUsPage() {
   );
 }
 
-const Card = ({ children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {
 // --- Main App ---
 export default function App() {
   const [page, setPage] = useState("login");
@@ -461,7 +443,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       <NavBar setPage={setPage} onLogout={handleLogout} />
       {page === "home" && <HomePage />}
       {page === "billing" && <BillingForm onAddBill={addBill} />}
