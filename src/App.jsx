@@ -1,3 +1,4 @@
+import './index.css';
 import React, { useState } from "react";
 
 const logoBlue = "#1E3A8A"; // Indigo-800 shade
@@ -455,5 +456,3 @@ export default function App() {
     </div>
   );
 }
-
-import './index.css';
