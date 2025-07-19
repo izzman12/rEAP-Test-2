@@ -1,99 +1,24 @@
-import React, { useState } from "react";
-
 function HomePage() {
   return (
     <div className="p-6 max-w-2xl mx-auto text-center">
-      <h1 className="text-4xl font-bold mb-4">Welcome to rEAP</h1>
-      <p className="text-lg text-gray-700 mb-4">
-        rEAP helps providers submit Employee Assistance Program (EAP) claims quickly, accurately, and without the hassle.
+      <h1 className="text-5xl font-bold mb-6 text-blue-700">Welcome to rEAP</h1>
+      <p className="text-xl text-gray-800 mb-4">
+        Effortless billing for Employee Assistance Programs.
       </p>
-      <p className="text-md text-gray-600">
-        Get started by submitting a bill through our easy-to-use platform.
+      <p className="text-md text-gray-600 mb-6">
+        Say goodbye to paperwork and hello to fast, accurate submissions. rEAP streamlines provider billing for EAP claims—so you can focus on helping people, not chasing reimbursements.
       </p>
-    </div>
-  );
-}
-
-function NavBar({ setPage }) {
-  return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between">
-      <div className="font-bold text-lg">rEAP</div>
-      <select
-        className="bg-blue-700 p-2 rounded text-white"
-        onChange={(e) => setPage(e.target.value)}
+      <a
+        href="#"
+        onClick={(e) => {
+          e.preventDefault();
+          document.querySelector("select").value = "billing";
+          document.querySelector("select").dispatchEvent(new Event("change", { bubbles: true }));
+        }}
+        className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded shadow"
       >
-        <option value="home">Home</option>
-        <option value="billing">Submit Bill</option>
-      </select>
-    </nav>
-  );
-}
-
-function BillingForm() {
-  const [formData, setFormData] = useState({
-    providerName: "",
-    clientName: "",
-    dateOfService: "",
-    serviceProvided: "",
-    claimFrequency: "",
-    diagnosisCode: "",
-    authorizationNumber: "",
-    placeOfService: "",
-    procedureCode: "",
-    modifiers: "",
-    charges: "",
-    units: ""
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Billing form submitted!");
-  };
-
-  return (
-    <div className="p-6 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">EAP Billing Form</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input className="w-full p-2 border rounded" type="text" name="providerName" placeholder="Provider Name" value={formData.providerName} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="text" name="clientName" placeholder="Client Name" value={formData.clientName} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="date" name="dateOfService" value={formData.dateOfService} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="text" name="serviceProvided" placeholder="Service Provided" value={formData.serviceProvided} onChange={handleChange} />
-        <select className="w-full p-2 border rounded" name="claimFrequency" value={formData.claimFrequency} onChange={handleChange}>
-          <option value="">Select Claim Frequency</option>
-          <option value="initial">Initial</option>
-          <option value="adjustment">Adjustment</option>
-          <option value="void">Void</option>
-        </select>
-        <input className="w-full p-2 border rounded" type="text" name="diagnosisCode" placeholder="Diagnosis Code" value={formData.diagnosisCode} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="text" name="authorizationNumber" placeholder="Authorization Number" value={formData.authorizationNumber} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="text" name="placeOfService" placeholder="Place of Service" value={formData.placeOfService} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="text" name="procedureCode" placeholder="Procedure Code" value={formData.procedureCode} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="text" name="modifiers" placeholder="Modifiers" value={formData.modifiers} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="number" step="0.01" name="charges" placeholder="Charges ($)" value={formData.charges} onChange={handleChange} />
-        <input className="w-full p-2 border rounded" type="number" step="0.1" name="units" placeholder="Units (Hours)" value={formData.units} onChange={handleChange} />
-        <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
-      </form>
-    </div>
-  );
-}
-
-export default function App() {
-  const [page, setPage] = useState("home");
-
-  return (
-    <div>
-      <NavBar setPage={setPage} />
-      {page === "home" && <HomePage />}
-      {page === "billing" && <BillingForm />}
+        Submit a Bill
+      </a>
     </div>
   );
 }
