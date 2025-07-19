@@ -455,3 +455,5 @@ export default function App() {
     </div>
   );
 }
+
+import './index.css';
