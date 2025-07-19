@@ -1,6 +1,71 @@
 import React, { useState } from "react";
 
 export default function BillingForm() {
+  const providerOptions = [
+    "ComPsych",
+    "Magellan Health",
+    "Beacon Health Options",
+    "Optum",
+    "Cigna EAP",
+    "Ceridian LifeWorks",
+    "Morneau Shepell",
+    "Modern Health",
+    "Lyra Health",
+    "Spring Health"
+  ];
+
+  const serviceOptions = [
+    "Counseling Session",
+    "Critical Incident Debrief",
+    "Assessment/Intake",
+    "Referral Coordination",
+    "Follow-Up Session",
+    "Group Counseling",
+    "Crisis Counseling",
+    "Telephone Consultation",
+    "Substance Use Assessment",
+    "Workplace Mediation"
+  ];
+
+  const diagnosisOptions = [
+    "F32.0 - Mild Depression",
+    "F32.1 - Moderate Depression",
+    "F33.1 - Major Depressive Disorder, recurrent",
+    "F41.1 - Generalized Anxiety Disorder",
+    "F41.0 - Panic Disorder",
+    "F43.21 - Adjustment Disorder w/ Anxiety",
+    "F43.23 - Adjustment Disorder w/ Mixed Anxiety & Depressed Mood",
+    "F90.0 - ADHD, Predominantly Inattentive",
+    "F84.0 - Autism Spectrum Disorder",
+    "F34.1 - Dysthymia"
+  ];
+
+  const procedureOptions = [
+    "90791 - Psychiatric diagnostic evaluation",
+    "90832 - Psychotherapy, 30 minutes",
+    "90834 - Psychotherapy, 45 minutes",
+    "90837 - Psychotherapy, 60 minutes",
+    "90846 - Family psychotherapy (without patient)",
+    "90847 - Family psychotherapy (with patient)",
+    "90853 - Group psychotherapy",
+    "96130 - Psychological testing evaluation",
+    "96136 - Neuropsychological test administration",
+    "99406 - Tobacco cessation counseling"
+  ];
+
+  const modifierOptions = [
+    "GT - Telehealth via interactive audio and video",
+    "95 - Synchronous telemedicine service",
+    "AJ - Clinical Social Worker",
+    "HO - Master’s Degree Level",
+    "HN - Bachelor's Degree Level",
+    "HE - Mental health program",
+    "U1 - Medicaid Level of Care 1",
+    "U2 - Level of Care 2",
+    "UC - Medicaid",
+    "HA - Child/Adolescent Program"
+  ];
+
   const [formData, setFormData] = useState({
     providerName: "",
     clientName: "",
@@ -34,7 +99,6 @@ export default function BillingForm() {
     <div className="p-6 max-w-xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">EAP Billing Form</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Provider Dropdown */}
         <select
           className="w-full p-2 border rounded"
           name="providerName"
@@ -43,19 +107,11 @@ export default function BillingForm() {
           required
         >
           <option value="">Select Provider</option>
-          <option value="ComPsych">ComPsych</option>
-          <option value="Lyra Health">Lyra Health</option>
-          <option value="Spring Health">Spring Health</option>
-          <option value="Magellan Health">Magellan Health</option>
-          <option value="Modern Health">Modern Health</option>
-          <option value="CuraLinc Healthcare">CuraLinc Healthcare</option>
-          <option value="Optum">Optum</option>
-          <option value="BHS">BHS</option>
-          <option value="Aetna Resources For Living">Aetna Resources For Living</option>
-          <option value="Cigna EAP">Cigna EAP</option>
+          {providerOptions.map((provider) => (
+            <option key={provider} value={provider}>{provider}</option>
+          ))}
         </select>
 
-        {/* Client Name */}
         <input
           className="w-full p-2 border rounded"
           type="text"
@@ -63,18 +119,18 @@ export default function BillingForm() {
           placeholder="Client Name"
           value={formData.clientName}
           onChange={handleChange}
+          required
         />
 
-        {/* Date of Service */}
         <input
           className="w-full p-2 border rounded"
           type="date"
           name="dateOfService"
           value={formData.dateOfService}
           onChange={handleChange}
+          required
         />
 
-        {/* Service Provided Dropdown */}
         <select
           className="w-full p-2 border rounded"
           name="serviceProvided"
@@ -83,19 +139,11 @@ export default function BillingForm() {
           required
         >
           <option value="">Select Service Provided</option>
-          <option value="Individual Counseling">Individual Counseling</option>
-          <option value="Couples Counseling">Couples Counseling</option>
-          <option value="Family Counseling">Family Counseling</option>
-          <option value="Substance Use Counseling">Substance Use Counseling</option>
-          <option value="Critical Incident Stress Debriefing (CISD)">CISD</option>
-          <option value="Workplace Mediation">Workplace Mediation</option>
-          <option value="Supervisor Consultation">Supervisor Consultation</option>
-          <option value="Wellness Workshop">Wellness Workshop</option>
-          <option value="Manager Referral Session">Manager Referral Session</option>
-          <option value="Assessment & Referral">Assessment & Referral</option>
+          {serviceOptions.map((service) => (
+            <option key={service} value={service}>{service}</option>
+          ))}
         </select>
 
-        {/* Claim Frequency */}
         <select
           className="w-full p-2 border rounded"
           name="claimFrequency"
@@ -108,7 +156,6 @@ export default function BillingForm() {
           <option value="void">Void</option>
         </select>
 
-        {/* Diagnosis Code Dropdown */}
         <select
           className="w-full p-2 border rounded"
           name="diagnosisCode"
@@ -117,19 +164,11 @@ export default function BillingForm() {
           required
         >
           <option value="">Select Diagnosis Code</option>
-          <option value="F32.0">F32.0 - Mild Depressive Episode</option>
-          <option value="F32.1">F32.1 - Moderate Depressive Episode</option>
-          <option value="F32.2">F32.2 - Severe Depressive Episode</option>
-          <option value="F33.1">F33.1 - Recurrent Depressive Disorder, Moderate</option>
-          <option value="F41.1">F41.1 - Generalized Anxiety Disorder</option>
-          <option value="F41.0">F41.0 - Panic Disorder</option>
-          <option value="F43.10">F43.10 - PTSD</option>
-          <option value="F34.1">F34.1 - Dysthymia</option>
-          <option value="F90.0">F90.0 - ADHD</option>
-          <option value="F50.9">F50.9 - Eating Disorder</option>
+          {diagnosisOptions.map((code) => (
+            <option key={code} value={code}>{code}</option>
+          ))}
         </select>
 
-        {/* Authorization Number */}
         <input
           className="w-full p-2 border rounded"
           type="text"
@@ -139,22 +178,15 @@ export default function BillingForm() {
           onChange={handleChange}
         />
 
-        {/* Place of Service Dropdown */}
-        <select
+        <input
           className="w-full p-2 border rounded"
+          type="text"
           name="placeOfService"
+          placeholder="Place of Service"
           value={formData.placeOfService}
           onChange={handleChange}
-          required
-        >
-          <option value="">Select Place of Service</option>
-          <option value="office">Office</option>
-          <option value="home">Home</option>
-          <option value="telehealth">Telehealth</option>
-          <option value="hospital">Hospital</option>
-        </select>
+        />
 
-        {/* Procedure Code Dropdown */}
         <select
           className="w-full p-2 border rounded"
           name="procedureCode"
@@ -163,19 +195,11 @@ export default function BillingForm() {
           required
         >
           <option value="">Select Procedure Code</option>
-          <option value="90791">90791 – Psych Diagnostic Eval</option>
-          <option value="90832">90832 – Therapy, 30 min</option>
-          <option value="90834">90834 – Therapy, 45 min</option>
-          <option value="90837">90837 – Therapy, 60 min</option>
-          <option value="90846">90846 – Family (w/o patient)</option>
-          <option value="90847">90847 – Family (with patient)</option>
-          <option value="90853">90853 – Group Therapy</option>
-          <option value="96130">96130 – Psych Testing Eval</option>
-          <option value="99406">99406 – Smoking Cessation 3–10 min</option>
-          <option value="99407">99407 – Smoking Cessation 10+ min</option>
+          {procedureOptions.map((code) => (
+            <option key={code} value={code}>{code}</option>
+          ))}
         </select>
 
-        {/* Modifiers Dropdown */}
         <select
           className="w-full p-2 border rounded"
           name="modifiers"
@@ -183,19 +207,11 @@ export default function BillingForm() {
           onChange={handleChange}
         >
           <option value="">Select Modifier (if any)</option>
-          <option value="GT">GT – Telehealth</option>
-          <option value="95">95 – Telemedicine</option>
-          <option value="HJ">HJ – EAP Services</option>
-          <option value="HE">HE – Mental Health Program</option>
-          <option value="U1">U1 – State-specific</option>
-          <option value="U2">U2 – State-specific Alt</option>
-          <option value="CR">CR – Catastrophe/Disaster</option>
-          <option value="GN">GN – Speech Pathology Plan</option>
-          <option value="GC">GC – Resident Supervision</option>
-          <option value="KX">KX – Med Policy Met</option>
+          {modifierOptions.map((mod) => (
+            <option key={mod} value={mod}>{mod}</option>
+          ))}
         </select>
 
-        {/* Charges */}
         <input
           className="w-full p-2 border rounded"
           type="number"
@@ -206,7 +222,6 @@ export default function BillingForm() {
           onChange={handleChange}
         />
 
-        {/* Units */}
         <input
           className="w-full p-2 border rounded"
           type="number"
@@ -217,7 +232,6 @@ export default function BillingForm() {
           onChange={handleChange}
         />
 
-        {/* Submit */}
         <button
           type="submit"
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
