@@ -1,3 +1,34 @@
+const logoBlue = "#1E3A8A"; // Indigo-800 shade
+const logoLightBlue = "#3B82F6"; // Blue-500 shade
+
+function Logo() {
+  return (
+    <div className="flex items-center space-x-2">
+      <svg
+        width="36"
+        height="36"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="drop-shadow-md"
+      >
+        {/* Simple stylized 'R' with a circle */}
+        <circle cx="32" cy="32" r="30" fill={logoBlue} />
+        <path
+          d="M20 20v24c0 2.5 2 4.5 4.5 4.5h8c5 0 6-6 1-6h-5v-6h7"
+          stroke={logoLightBlue}
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <span className="text-white text-2xl font-extrabold select-none tracking-wide">
+        rEAP
+      </span>
+    </div>
+  );
+}
+
 import React, { useState } from "react";
 
 // --- Login Page ---
@@ -54,10 +85,12 @@ function LoginPage({ onLogin }) {
 // --- NavBar ---
 function NavBar({ setPage, onLogout }) {
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <div className="font-bold text-lg">rEAP</div>
+    <nav className="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white p-4 flex justify-between items-center shadow-lg">
+      <div className="flex items-center space-x-4">
+        <Logo />
+      </div>
       <select
-        className="bg-blue-700 p-2 rounded text-white"
+        className="bg-blue-700 p-2 rounded text-white font-semibold focus:outline-none focus:ring-2 focus:ring-blue-300"
         onChange={(e) => setPage(e.target.value)}
       >
         <option value="home">Home</option>
@@ -68,7 +101,7 @@ function NavBar({ setPage, onLogout }) {
       </select>
       <button
         onClick={onLogout}
-        className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded"
+        className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded shadow-md transition-colors duration-300"
       >
         Logout
       </button>
