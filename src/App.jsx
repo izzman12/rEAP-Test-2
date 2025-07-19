@@ -111,10 +111,7 @@ function NavBar({ setPage, onLogout }) {
 
 const Card = ({ children }) => (
   <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {children}
-  </div>
-);
-
+    {
 // --- Home Page ---
 function HomePage() {
   return (
@@ -133,10 +130,7 @@ function HomePage() {
 
 const Card = ({ children }) => (
   <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {children}
-  </div>
-);
-
+    {
 // --- Billing Form ---
 function BillingForm({ onAddBill }) {
   const [formData, setFormData] = useState({
@@ -306,10 +300,7 @@ function BillingForm({ onAddBill }) {
 
 const Card = ({ children }) => (
   <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {children}
-  </div>
-);
-
+    {
 // --- Previous Bills Page ---
 function PreviousBills({ bills }) {
   const statusColor = {
@@ -355,10 +346,7 @@ function PreviousBills({ bills }) {
 
 const Card = ({ children }) => (
   <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {children}
-  </div>
-);
-
+    {
 // --- Profile Page ---
 function ProfilePage({ profileData, setProfileData }) {
   const handleChange = (e) => {
@@ -418,10 +406,7 @@ function ProfilePage({ profileData, setProfileData }) {
 
 const Card = ({ children }) => (
   <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {children}
-  </div>
-);
-
+    {
 // --- About Us Page ---
 function AboutUsPage() {
   return (
@@ -444,10 +429,7 @@ function AboutUsPage() {
 
 const Card = ({ children }) => (
   <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
-    {children}
-  </div>
-);
-
+    {
 // --- Main App ---
 export default function App() {
   const [page, setPage] = useState("login");
