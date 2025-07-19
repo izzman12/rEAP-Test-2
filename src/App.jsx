@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 function HomePage() {
   return (
-    <div className="p-6 max-w-xl mx-auto text-center">
-      <h1 className="text-3xl font-bold mb-4">Welcome to rEAP</h1>
-      <p className="text-lg">Your streamlined EAP billing platform</p>
+    <div className="p-6 max-w-2xl mx-auto text-center">
+      <h1 className="text-4xl font-bold mb-4">Welcome to rEAP</h1>
+      <p className="text-lg text-gray-700 mb-4">
+        rEAP helps providers submit Employee Assistance Program (EAP) claims quickly, accurately, and without the hassle.
+      </p>
+      <p className="text-md text-gray-600">
+        Get started by submitting a bill through our easy-to-use platform.
+      </p>
     </div>
   );
 }
@@ -91,5 +96,4 @@ export default function App() {
       {page === "billing" && <BillingForm />}
     </div>
   );
-}
 }
