@@ -5,7 +5,20 @@ export default function BillingForm() {
     providerName: "",
     clientName: "",
     dateOfService: "",
-    serviceProvided: "",
+    serviceProvided: "<select
+  className="w-full p-2 border rounded"
+  name="placeOfService"
+  value={formData.placeOfService}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select Place of Service</option>
+  <option value="office">Office</option>
+  <option value="home">Home</option>
+  <option value="telehealth">Telehealth</option>
+  <option value="hospital">Hospital</option>
+</select>
+",
     claimFrequency: "",
     diagnosisCode: "",
     authorizationNumber: "",
