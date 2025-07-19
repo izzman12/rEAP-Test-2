@@ -20,7 +20,26 @@ export default function BillingForm() {
 </select>
 ",
     claimFrequency: "",
-    diagnosisCode: "",
+    diagnosisCode: "<select
+  className="w-full p-2 border rounded"
+  name="diagnosisCode"
+  value={formData.diagnosisCode}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select Diagnosis Code</option>
+  <option value="F32.0">F32.0 - Mild Depressive Episode</option>
+  <option value="F32.1">F32.1 - Moderate Depressive Episode</option>
+  <option value="F32.2">F32.2 - Severe Depressive Episode</option>
+  <option value="F33.1">F33.1 - Recurrent Depressive Disorder, Moderate</option>
+  <option value="F41.1">F41.1 - Generalized Anxiety Disorder</option>
+  <option value="F41.0">F41.0 - Panic Disorder</option>
+  <option value="F43.10">F43.10 - Post-Traumatic Stress Disorder (PTSD)</option>
+  <option value="F34.1">F34.1 - Dysthymia</option>
+  <option value="F90.0">F90.0 - Attention-Deficit Hyperactivity Disorder</option>
+  <option value="F50.9">F50.9 - Eating Disorder, Unspecified</option>
+</select>
+",
     authorizationNumber: "",
     placeOfService: "",
     procedureCode: "",
