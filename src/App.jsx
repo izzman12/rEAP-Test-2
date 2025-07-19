@@ -109,6 +109,12 @@ function NavBar({ setPage, onLogout }) {
   );
 }
 
+const Card = ({ children }) => (
+  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
+    {children}
+  </div>
+);
+
 // --- Home Page ---
 function HomePage() {
   return (
@@ -124,6 +130,12 @@ function HomePage() {
     </div>
   );
 }
+
+const Card = ({ children }) => (
+  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
+    {children}
+  </div>
+);
 
 // --- Billing Form ---
 function BillingForm({ onAddBill }) {
@@ -292,6 +304,12 @@ function BillingForm({ onAddBill }) {
   );
 }
 
+const Card = ({ children }) => (
+  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
+    {children}
+  </div>
+);
+
 // --- Previous Bills Page ---
 function PreviousBills({ bills }) {
   const statusColor = {
@@ -334,6 +352,12 @@ function PreviousBills({ bills }) {
     </div>
   );
 }
+
+const Card = ({ children }) => (
+  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
+    {children}
+  </div>
+);
 
 // --- Profile Page ---
 function ProfilePage({ profileData, setProfileData }) {
@@ -392,6 +416,12 @@ function ProfilePage({ profileData, setProfileData }) {
   );
 }
 
+const Card = ({ children }) => (
+  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
+    {children}
+  </div>
+);
+
 // --- About Us Page ---
 function AboutUsPage() {
   return (
@@ -411,6 +441,12 @@ function AboutUsPage() {
     </div>
   );
 }
+
+const Card = ({ children }) => (
+  <div className="bg-white shadow-md rounded-lg p-6 max-w-4xl mx-auto my-6">
+    {children}
+  </div>
+);
 
 // --- Main App ---
 export default function App() {
