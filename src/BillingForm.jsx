@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import React, { useState } from "react";
-
 export default function BillingForm() {
   const [formData, setFormData] = useState({
     providerName: "",
