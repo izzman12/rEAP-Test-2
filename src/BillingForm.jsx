@@ -2,21 +2,46 @@ import React, { useState } from "react";
 
 export default function BillingForm() {
   const [formData, setFormData] = useState({
-    providerName: "",
+    providerName: "<select
+  className="w-full p-2 border rounded"
+  name="providerName"
+  value={formData.providerName}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select Provider</option>
+  <option value="ComPsych">ComPsych</option>
+  <option value="Lyra Health">Lyra Health</option>
+  <option value="Spring Health">Spring Health</option>
+  <option value="Magellan Health">Magellan Health</option>
+  <option value="Modern Health">Modern Health</option>
+  <option value="CuraLinc Healthcare">CuraLinc Healthcare</option>
+  <option value="Optum">Optum</option>
+  <option value="BHS">BHS</option>
+  <option value="Aetna Resources For Living">Aetna Resources For Living</option>
+  <option value="Cigna EAP">Cigna EAP</option>
+</select>
+",
     clientName: "",
     dateOfService: "",
     serviceProvided: "<select
   className="w-full p-2 border rounded"
-  name="placeOfService"
-  value={formData.placeOfService}
+  name="serviceProvided"
+  value={formData.serviceProvided}
   onChange={handleChange}
   required
 >
-  <option value="">Select Place of Service</option>
-  <option value="office">Office</option>
-  <option value="home">Home</option>
-  <option value="telehealth">Telehealth</option>
-  <option value="hospital">Hospital</option>
+  <option value="">Select Service Provided</option>
+  <option value="Individual Counseling">Individual Counseling</option>
+  <option value="Couples Counseling">Couples Counseling</option>
+  <option value="Family Counseling">Family Counseling</option>
+  <option value="Substance Use Counseling">Substance Use Counseling</option>
+  <option value="Critical Incident Stress Debriefing (CISD)">Critical Incident Stress Debriefing (CISD)</option>
+  <option value="Workplace Mediation">Workplace Mediation</option>
+  <option value="Supervisor Consultation">Supervisor Consultation</option>
+  <option value="Wellness Workshop">Wellness Workshop</option>
+  <option value="Manager Referral Session">Manager Referral Session</option>
+  <option value="Assessment & Referral">Assessment & Referral</option>
 </select>
 ",
     claimFrequency: "",
@@ -41,9 +66,53 @@ export default function BillingForm() {
 </select>
 ",
     authorizationNumber: "",
-    placeOfService: "",
-    procedureCode: "",
-    modifiers: "",
+    placeOfService: "<select
+  className="w-full p-2 border rounded"
+  name="placeOfService"
+  value={formData.placeOfService}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select Place of Service</option>
+  <option value="office">Office</option>
+  <option value="home">Home</option>
+  <option value="telehealth">Telehealth</option>
+  <option value="hospital">Hospital</option>
+</select>",
+    procedureCode: "<select
+  className="w-full p-2 border rounded"
+  name="procedureCode"
+  value={formData.procedureCode}
+  onChange={handleChange}
+  required
+>
+  <option value="">Select Procedure Code</option>
+  <option value="90791">90791 – Psychiatric Diagnostic Evaluation</option>
+  <option value="90832">90832 – Psychotherapy, 30 minutes</option>
+  <option value="90834">90834 – Psychotherapy, 45 minutes</option>
+  <option value="90837">90837 – Psychotherapy, 60 minutes</option>
+  <option value="90846">90846 – Family Psychotherapy (w/o patient)</option>
+  <option value="90847">90847 – Family Psychotherapy (with patient)</option>
+  <option value="90853">90853 – Group Psychotherapy</option>
+  <option value="96130">96130 – Psychological Testing Evaluation</option>
+  <option value="99406">99406 – Smoking Cessation (3–10 mins)</option>
+  <option value="99407">99407 – Smoking Cessation (10+ mins)</option>
+</select>
+",
+    modifiers: "<select
+  className="w-full p-2 border rounded"
+  name="modifiers"
+  value={formData.modifiers}
+  onChange={handleChange}
+>
+  <option value="">Select Modifier (if any)</option>
+  <option value="GT">GT – Telehealth via interactive audio and video</option>
+  <option value="95">95 – Synchronous Telemedicine Service</option>
+  <option value="HJ">HJ – Employee Assistance Program (EAP) services</option>
+  <option value="HE">HE – Mental Health Program</option>
+  <option value="U1">U1 – State-defined modifier (often used by Medicaid/EAP)</option>
+  <option value="U2">U2 – State-defined modifier (alt
+",
     charges: "",
     units: ""
   });
