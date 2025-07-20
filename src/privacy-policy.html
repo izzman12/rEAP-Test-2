@@ -1,100 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy & Security Policy | rEAP</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 2rem;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2 {
-      color: #0b5f6f;
-    }
-    section {
-      margin-bottom: 2rem;
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.05);
-    }
-    strong {
-      color: #0b5f6f;
-    }
-    a {
-      color: #0b5f6f;
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+import React from 'react';
 
-  <h1>Privacy & Security Policy</h1>
+const PrivacyPolicy = () => {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.heading}>Privacy & Security Policy</h1>
 
-  <section>
-    <h2>Privacy Policy</h2>
-    <h3>1. Introduction</h3>
-    <p>rEAP ("we", "us", or "our") is committed to protecting the privacy and confidentiality of personal and health-related information. This policy outlines how we collect, use, share, and protect information on our platform.</p>
+      <section style={styles.section}>
+        <h2>Privacy Policy</h2>
 
-    <h3>2. Information We Collect</h3>
-    <ul>
-      <li><strong>Provider Info:</strong> Name, NPI, contact details, payout info.</li>
-      <li><strong>Client/Employee Info:</strong> Anonymous/pseudonymized identifiers, service usage.</li>
-      <li><strong>Employer Info:</strong> Billing contacts, contract parameters.</li>
-      <li><strong>Billing Records:</strong> Session data, invoices, payment status.</li>
-      <li><strong>Usage Data:</strong> Login logs, IP address, audit trails.</li>
-    </ul>
+        <h3>1. Introduction</h3>
+        <p>
+          rEAP ("we", "us", or "our") is committed to protecting the privacy and confidentiality of personal and health-related information. This policy outlines how we collect, use, share, and protect information on our platform.
+        </p>
 
-    <h3>3. Use of Information</h3>
-    <p>We use collected data to manage billing, generate reports, and ensure compliance. We do <strong>not</strong> sell or use data for advertising.</p>
+        <h3>2. Information We Collect</h3>
+        <ul>
+          <li><strong>Provider Info:</strong> Name, NPI, contact details, payout info.</li>
+          <li><strong>Client/Employee Info:</strong> Anonymous/pseudonymized identifiers, service usage.</li>
+          <li><strong>Employer Info:</strong> Billing contacts, contract parameters.</li>
+          <li><strong>Billing Records:</strong> Session data, invoices, payment status.</li>
+          <li><strong>Usage Data:</strong> Login logs, IP address, audit trails.</li>
+        </ul>
 
-    <h3>4. Data Sharing</h3>
-    <p>Data is shared only with authorized users (providers, employers), legal entities (if required), and HIPAA-compliant vendors or processors.</p>
+        <h3>3. Use of Information</h3>
+        <p>We use collected data to manage billing, generate reports, and ensure compliance. We do <strong>not</strong> sell or use data for advertising.</p>
 
-    <h3>5. Data Retention</h3>
-    <p>We retain PHI and billing data for a minimum of 7 years per HIPAA and state law requirements.</p>
+        <h3>4. Data Sharing</h3>
+        <p>Data is shared only with authorized users (providers, employers), legal entities (if required), and HIPAA-compliant vendors or processors.</p>
 
-    <h3>6. Your Rights</h3>
-    <p>Clients and providers may request access, corrections, or disclosure logs of their information.</p>
-    <p>Contact us at: <a href="mailto:privacy@reapplatform.com">privacy@reapplatform.com</a></p>
-  </section>
+        <h3>5. Data Retention</h3>
+        <p>We retain PHI and billing data for a minimum of 7 years per HIPAA and state law requirements.</p>
 
-  <section>
-    <h2>Security Policy</h2>
+        <h3>6. Your Rights</h3>
+        <p>Clients and providers may request access, corrections, or disclosure logs of their information.</p>
+        <p>Contact us at: <a href="mailto:privacy@reapplatform.com">privacy@reapplatform.com</a></p>
+      </section>
 
-    <h3>1. Overview</h3>
-    <p>rEAP applies administrative, physical, and technical safeguards to protect health and billing data under HIPAA standards.</p>
+      <section style={styles.section}>
+        <h2>Security Policy</h2>
 
-    <h3>2. Data Security</h3>
-    <ul>
-      <li>End-to-end encryption (AES-256, TLS 1.2+)</li>
-      <li>Role-based access controls (RBAC)</li>
-      <li>Multi-factor authentication (MFA)</li>
-      <li>Audit logging of all system access and data changes</li>
-    </ul>
+        <h3>1. Overview</h3>
+        <p>rEAP applies administrative, physical, and technical safeguards to protect health and billing data under HIPAA standards.</p>
 
-    <h3>3. Infrastructure Security</h3>
-    <p>We host on HIPAA-compliant cloud infrastructure (AWS or Azure), maintain isolated environments, and perform regular security patching.</p>
+        <h3>2. Data Security</h3>
+        <ul>
+          <li>End-to-end encryption (AES-256, TLS 1.2+)</li>
+          <li>Role-based access controls (RBAC)</li>
+          <li>Multi-factor authentication (MFA)</li>
+          <li>Audit logging of all system access and data changes</li>
+        </ul>
 
-    <h3>4. Incident Response</h3>
-    <p>We respond to any suspected breach within 24 hours, notify affected parties as required, and perform full remediation and policy updates.</p>
+        <h3>3. Infrastructure Security</h3>
+        <p>We host on HIPAA-compliant cloud infrastructure (AWS or Azure), maintain isolated environments, and perform regular security patching.</p>
 
-    <h3>5. Employee & Vendor Compliance</h3>
-    <ul>
-      <li>All employees receive HIPAA training annually.</li>
-      <li>All vendors must sign Business Associate Agreements (BAAs).</li>
-      <li>Access is revoked immediately upon role termination.</li>
-    </ul>
+        <h3>4. Incident Response</h3>
+        <p>We respond to any suspected breach within 24 hours, notify affected parties as required, and perform full remediation and policy updates.</p>
 
-    <h3>6. Contact</h3>
-    <p>Questions or reports can be directed to:</p>
-    <p><a href="mailto:security@reapplatform.com">security@reapplatform.com</a></p>
-  </section>
+        <h3>5. Employee & Vendor Compliance</h3>
+        <ul>
+          <li>All employees receive HIPAA training annually.</li>
+          <li>All vendors must sign Business Associate Agreements (BAAs).</li>
+          <li>Access is revoked immediately upon role termination.</li>
+        </ul>
 
-</body>
-</html>
+        <h3>6. Contact</h3>
+        <p>
+          Questions or reports can be directed to: <a href="mailto:security@reapplatform.com">security@reapplatform.com</a>
+        </p>
+      </section>
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    padding: '2rem',
+    maxWidth: '800px',
+    margin: '0 auto',
+    fontFamily: 'Arial, sans-serif',
+    lineHeight: 1.6,
+    backgroundColor: '#f9f9f9',
+    color: '#333'
+  },
+  heading: {
+    color: '#0b5f6f'
+  },
+  section: {
+    backgroundColor: '#fff',
+    padding: '1.5rem',
+    borderRadius: '8px',
+    boxShadow: '0 0 6px rgba(0,0,0,0.05)',
+    marginBottom: '2rem'
+  }
+};
+
+export default PrivacyPolicy;
