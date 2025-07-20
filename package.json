@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 {
   "name": "reap-billing-prototype",
   "version": "1.0.0",
