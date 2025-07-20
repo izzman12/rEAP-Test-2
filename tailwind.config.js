@@ -5,11 +5,7 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
-    extend: {
-      colors: {
-        primary: '#1e40af', // Tailwind blue-800
-      },
-    },
+    extend: {},
   },
   plugins: [],
-};
+}
